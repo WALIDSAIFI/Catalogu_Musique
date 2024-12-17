@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/JavaAura/WALID_SAIFI_S4_B2_Music'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    sh 'mvn clean install'
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+
+                    sh 'mvn test'
+                }
+            }
+        }
+
+
+    }
+}
