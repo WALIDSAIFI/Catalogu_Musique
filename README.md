@@ -1,33 +1,33 @@
-// README.md
-# Projet : API REST pour la gestion d'un catalogue musical
+# Projet : API REST pour la gestion d'un catalogue musical 🎵
 
 ## Contexte
 Une entreprise souhaite mettre en place une API REST pour gérer son catalogue musical. L'API doit permettre la gestion des albums et chansons avec différents niveaux d'accès (USER/ADMIN) via une authentification sécurisée stateless.
 
 ## Entités principales
-- **Album** :
-    - `id` (Long, généré automatiquement)
-    - `titre` (String)
-    - `artiste` (String)
-    - `annee` (Integer)
 
-- **Chanson** :
-    - `id` (Long, généré automatiquement)
-    - `titre` (String)
-    - `duree` (Integer)
-    - `trackNumber` (Integer)
-    - `album` (Album)
+### Album 🎶
+- `id` (Long, généré automatiquement)
+- `titre` (String)
+- `artiste` (String)
+- `annee` (Integer)
 
-- **User** :
-    - `id` (Long, généré automatiquement)
-    - `login` (String, unique)
-    - `password` (String, encodé)
-    - `active` (Boolean)
-    - `roles` (Collection<String>)
+### Chanson 🎤
+- `id` (Long, généré automatiquement)
+- `titre` (String)
+- `duree` (Integer)
+- `trackNumber` (Integer)
+- `album` (Album)
+
+### Utilisateur 👤
+- `id` (Long, généré automatiquement)
+- `login` (String, unique)
+- `password` (String, encodé)
+- `active` (Boolean)
+- `roles` (Collection<String>)
 
 ## Fonctionnalités
 
-### Gestion des Albums
+### Gestion des Albums 📀
 - **Lister les albums** :
     - Endpoint : `/api/user/albums`
     - Méthode : `GET`
@@ -64,7 +64,7 @@ Une entreprise souhaite mettre en place une API REST pour gérer son catalogue m
     - Méthode : `DELETE`
     - Accès : ADMIN uniquement
 
-### Gestion des Chansons
+### Gestion des Chansons 🎧
 - **Lister les chansons** :
     - Endpoint : `/api/user/songs`
     - Méthode : `GET`
@@ -96,7 +96,7 @@ Une entreprise souhaite mettre en place une API REST pour gérer son catalogue m
     - Méthode : `DELETE`
     - Accès : ADMIN uniquement
 
-### Gestion des Utilisateurs
+### Gestion des Utilisateurs 👥
 - **Authentification** :
     - Endpoint : `/api/auth/login`
     - Méthode : `POST`
@@ -115,7 +115,7 @@ Une entreprise souhaite mettre en place une API REST pour gérer son catalogue m
     - Méthode : `PUT`
     - Accès : ADMIN uniquement
 
-## Sécurité
+## Sécurité 🔒
 - Authentification stateless avec JWT.
 - Les rôles sont contrôlés sur chaque endpoint :
     - `/api/admin/*` nécessite le rôle ADMIN.
@@ -128,7 +128,7 @@ Une entreprise souhaite mettre en place une API REST pour gérer son catalogue m
     - Ont une durée de validité limitée (`.withExpiresAt()`).
     - Sont signés de manière sécurisée (`.sign()` avec HMAC ou RSA).
 
-## Outils et technologies utilisés
+## Outils et technologies utilisés 🛠️
 - **Framework** : Spring Boot
 - **Base de données** : MongoDB
 - **Sécurité** : Spring Security avec JWT
